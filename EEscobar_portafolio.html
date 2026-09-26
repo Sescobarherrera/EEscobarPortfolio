@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Data Analyst - Power BI</title>
+  <meta name="description" content="Professional portfolio of a Data Analyst specializing in Power BI, data modeling, and visualization." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Color Palette
+   HEX: #0b1320 #1f2a44 #f2efe8 #c7b8a6 #b46a55
+  -->
+ 
+  <style>
+    /* ========== VARIABLES ========== */
+    :root {
+      --primary: #0b1320;
+      --primary-light: #1f2a44;
+      --accent: #b46a55;
+      --accent-hover: #9d5847;
+      --accent-soft: #f2efe8;
+      --secondary: #c7b8a6;
+      --text: #1f2a44;
+      --text-light: #596780;
+      --bg: #f2efe8;
+      --white: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #faf7f2;
+      --border: #e8e1d7;
+      --success: #3d5a4d;
+      --radius: 14px;
+      --shadow: 0 18px 45px rgba(11, 19, 32, 0.08);
+      --shadow-soft: 0 12px 26px rgba(180, 106, 85, 0.12);
+      --transition: all 0.25s ease;
+    }
+
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section,
+    footer {
+      scroll-margin-top: 82px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f7f4ee 0%, #f2efe8 100%);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== HEADER / NAV ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover);
+      color: white !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 150px 0 80px;
+      background: radial-gradient(circle at top left, rgba(199, 184, 166, 0.35), rgba(242, 239, 232, 0.9) 38%, #f2efe8 100%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-text p {
+      color: var(--text-light);
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.9);
+      color: var(--primary);
+      border: 1.5px solid var(--border);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(29, 78, 216, 0.4);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-photo {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: var(--shadow-lg);
+      margin: 0 auto;
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 86px 0;
+      position: relative;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    section:nth-of-type(odd) {
+      background: rgba(255,255,255,0.52);
+    }
+
+    section:nth-of-type(even) {
+      background: linear-gradient(180deg, rgba(242,239,232,0.86), rgba(255,255,255,0.88));
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 2.1vw, 2.4rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      text-align: center;
+      letter-spacing: -0.05em;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 1.02rem;
+    }
+
+    /* ========== ABOUT ========== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .about-info {
+      background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-info::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+    }
+
+    .about-info h3 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item span:first-child {
+      color: var(--text-light);
+    }
+
+    .info-item span:last-child {
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    /* ========== SKILLS ========== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .skill-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::after {
+      content: "";
+      position: absolute;
+      inset: auto auto 0 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      transform: scaleX(0.25);
+      transform-origin: left;
+      opacity: 0;
+      transition: all 0.25s ease;
+    }
+
+    @media (max-width: 1100px) {
+      .skills-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 880px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 420px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(29, 78, 216, 0.25);
+    }
+
+    .skill-card:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .skill-level {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ========== PROJECTS ========== */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project-category {
+      margin-top: 28px;
+    }
+
+    .projects-toc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px auto 24px;
+      max-width: 700px;
+    }
+
+    .projects-toc a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: var(--transition);
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .projects-toc a:hover {
+      background: var(--accent-soft);
+      border-color: rgba(180, 106, 85, 0.28);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .category-title {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .projects-tabs {
+      border: 1px solid var(--border);
+      border-radius: 18px 18px 14px 14px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .tabs-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 14px 0;
+      background: linear-gradient(180deg, #f5f9ff, #eef4ff);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-button {
+      position: relative;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      background: #edf2f7;
+      color: var(--text-light);
+      padding: 12px 18px 11px;
+      border-radius: 12px 12px 0 0;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .tab-button:hover {
+      background: #dbeafe;
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .tab-button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .tab-button.active {
+      background: white;
+      color: var(--primary);
+      border-color: var(--border);
+      box-shadow: 0 -2px 0 var(--accent) inset, 0 2px 0 rgba(37, 99, 235, 0.08);
+    }
+
+    .tab-button.active::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: -1px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #60a5fa);
+      border-radius: 999px 999px 0 0;
+    }
+
+    .tab-panel {
+      display: none;
+      background: white;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .project-card {
+      background: white;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: none;
+      transform: perspective(900px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out;
+      will-change: transform;
+    }
+
+    .project-card:hover {
+      box-shadow: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card {
+        transform: none;
+        transition: none;
+        will-change: auto;
+      }
+    }
+
+    .project-header {
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-header h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      background: #eff6ff;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .project-desc {
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .project-insights {
+      margin-top: 12px;
+    }
+
+    .project-insights li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .project-insights li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .project-body {
+      padding: 24px 32px;
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .screenshot {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+      background: #f1f5f9;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .screenshot:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow);
+    }
+
+    .screenshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .publish-note {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: #f0fdf4;
+      border-left: 3px solid var(--success);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .publish-note strong {
+      color: var(--success);
+    }
+
+    /* ========== EDUCATION ========== */
+    .timeline {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transform: perspective(900px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out;
+      will-change: transform;
+    }
+
+    .timeline-item-link {
+      display: block;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-item {
+        transform: none;
+        transition: none;
+        will-change: auto;
+      }
+    }
+
+    .timeline-item h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .timeline-item .org {
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .timeline-item .date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .course-dropdown {
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #F2EFE8, #F9FBFF);
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+    }
+
+    .course-dropdown summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 14px 12px 42px;
+      font-weight: 700;
+      color: var(--primary);
+      background: linear-gradient(180deg, #F2EFE8, #F9FBFF);
+      transition: var(--transition);
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .course-dropdown summary::before {
+      content: '▾';
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+
+    .course-dropdown[open] summary::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .course-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .course-dropdown[open] summary {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .course-dropdown summary:hover {
+      background: #F2EFE8;
+    }
+
+    .course-list {
+      margin: 0;
+      padding: 12px 18px 14px 34px;
+      color: var(--text);
+    }
+
+    .course-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-section {
+      background: #b46a55;
+      color: #b46a55;
+    }
+
+    .contact-section .section-title {
+      color: #b46a55;
+    }
+
+    .contact-section .section-subtitle {
+      color: #c7b8a6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: white;
+      border: 1px solid rgba(230, 235, 241, 0.15);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: 0 18px 30px rgba(78, 80, 87, 0.25);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .contact-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-card h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-card a {
+      color: #c7b8a6;
+      font-size: 0.95rem;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #c7b8a6;
+      color:#0b1320;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #93c5fd;
+    }
+
+    /* ========== LIGHTBOX ========== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-photo {
+        order: -1;
+        width: 200px;
+        height: 200px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .project-header,
+      .project-body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <nav class="container">
+      <a href="#home" class="logo">Portfolio</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <!-- Full name -->
+        <h1>Enrique Sebastián Escobar</h1>
+        <!-- Professional title -->
+        <p class="subtitle">Industrial Engineer | Data Analysis</p>
+        <!-- Short description -->
+        <p>
+          
+Industrial Engineering student at Universidad San Francisco de Quito with hands-on experience in data analysis, process automation, and Business Intelligence. I love turning raw data into clear, actionable insights that drive better decisions and operational efficiency.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://linkedin.com/in/sescobarherrera" target="_blank" class="btn btn-outline">LinkedIn</a>
+          <a href="CV EEscobar.pdf" class="btn btn-outline">Download CV</a>
+        </div>
+      </div>
+      <div>
+        <!-- Replace with a professional photo -->
+        <img 
+          src="IMG_0279.jpeg" 
+          alt="Profile photo"
+          class="hero-photo"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About me</h2>
+      <p class="section-subtitle">A bit more about my profile and what I'm looking for</p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            My experience spans innovation, operations, and consulting environments:
+          </p>
+          <p>
+          <ul>
+            <li><strong>Innovation Lab:</strong> At NEST.Lab (USFQ) I managed administrative processes, event logistics, and built Power BI dashboards to track KPIs and partnerships.</li>
+            <li><strong>Technical Analyst:</strong>  As a Technical Analyst I designed automated workflows and CRM solutions, along with real-time performance dashboards.</li>
+            <li><strong>Data Analysis Consultant:</strong> As a Data Analysis Consultant I developed ETL pipelines, defined operational KPIs, and created forecasting models to optimize inventory and working capital.</li>
+          </ul>
+          </p>  
+          <p>
+            I’m driven by complex challenges and delivering measurable impact. Currently open to opportunities in business analytics, Business Intelligence, operations optimization, and digital transformation.
+          </p>
+        </div>
+
+        <div class="about-info">
+          <h3>Quick Info</h3>
+          <div class="info-item">
+            <span>Based at</span>
+            <span>Quito, Ecuador</span>
+          </div>
+          <div class="info-item">
+            <span>Availability</span>
+            <span>Immediate</span>
+          </div>
+          <div class="info-item">
+            <span>Modality</span>
+            <span>Remote/Hybrid</span>
+          </div>
+          <div class="info-item">
+            <span>Languages</span>
+            <span>Spanish (native), English (bilingual)</span>
+          </div>
+          <div class="info-item">
+            <span>Email</span>
+            <span>sescobarherrera@outlook.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" style="background: white;">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h4>Python</h4>
+          <p class="skill-level">ML models, Data Analysis</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🐛</div>
+          <h4>Git & GitHub</h4>
+          <p class="skill-level">Version Control & Collaboration</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h4>Power BI</h4>
+          <p class="skill-level">Desktop & Service</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🧮</div>
+          <h4>DAX</h4>
+          <p class="skill-level">Measures & Columns</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔄</div>
+          <h4>Power Query</h4>
+          <p class="skill-level">Data Transformation</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗂️</div>
+          <h4>Data Modeling</h4>
+          <p class="skill-level">Star Schema</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📈</div>
+          <h4>Visualization</h4>
+          <p class="skill-level">Dashboards, storytelling & decision making</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📑</div>
+          <h4>Excel</h4>
+          <p class="skill-level">Advanced</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗃️</div>
+          <h4>SQL</h4>
+          <p class="skill-level">Basic queries</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">☁️</div>
+          <h4>Cloud</h4>
+          <p class="skill-level">Computing & Storage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <nav class="projects-toc" aria-label="Table of contents for projects">
+        <a href="#python-projects">Python Projects</a>
+        <a href="#powerbi-projects">Power BI Projects</a>
+        <a href="#excel-projects">Excel Projects</a>
+      </nav>
+
+      <div class="projects-grid">
+        <div class="project-category" id="python-projects">
+          <h3 class="category-title">Python Projects</h3>
+          <div class="projects-tabs" data-group="python">
+            <div class="tabs-header" role="tablist" aria-label="Python projects">
+              <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="python-project-1" id="python-tab-1" data-tab="python-project-1">
+                Project 1
+              </button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="python-project-2" id="python-tab-2" data-tab="python-project-2">
+                Project 2
+              </button>
+            </div>
+
+            <div class="tab-panel active" id="python-project-1" role="tabpanel" aria-labelledby="python-tab-1">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>Exploratory Data Analysis with Python</h3>
+                  <div class="project-meta">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Matplotlib</span>
+                  </div>
+                  <p class="project-desc">
+                    Data cleaning, analysis, and visualization project to identify patterns, anomalies,
+                    and opportunities for improvement in a real-world dataset.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Data cleaning and transformation with pandas</li>
+                    <li>Key metrics visualization using matplotlib and seaborn</li>
+                    <li>Trend identification and segmentation by relevant variables</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Metrics dashboard</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Distributions and outliers</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="#" class="btn btn-primary">View notebook</a>
+                    <a href="#" class="btn btn-outline">Download code</a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Python:</strong> Project focused on descriptive analysis and data preparation to support evidence-based decision making.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="python-project-2" role="tabpanel" aria-labelledby="python-tab-2">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>Predictive Classification Model</h3>
+                  <div class="project-meta">
+                    <span class="tag">Python</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Machine Learning</span>
+                  </div>
+                  <p class="project-desc">
+                    Development of a predictive classification model with cross-validation, performance metrics,
+                    and analysis of the most influential variables.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Dataset preparation and train/test split</li>
+                    <li>Model comparison and performance metric analysis</li>
+                    <li>Result interpretation and key variable assessment</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Confusion matrix</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Most important variables</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="#" class="btn btn-primary">View project</a>
+                    <a href="#" class="btn btn-outline">Download script</a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Python:</strong> Example of an analytical solution with a predictive focus and result validation.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-category" id="powerbi-projects">
+          <h3 class="category-title">Power BI Projects</h3>
+          <div class="projects-tabs" data-group="powerbi">
+            <div class="tabs-header" role="tablist" aria-label="Power BI projects">
+              <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="powerbi-project-1" id="powerbi-tab-1" data-tab="powerbi-project-1">
+                Project 1
+              </button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="powerbi-project-2" id="powerbi-tab-2" data-tab="powerbi-project-2">
+                Project 2
+              </button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="powerbi-project-3" id="powerbi-tab-3" data-tab="powerbi-project-3">
+                Project 3
+              </button>
+            </div>
+
+            <div class="tab-panel active" id="powerbi-project-1" role="tabpanel" aria-labelledby="powerbi-tab-1">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>Retail Sales Analysis 2024</h3>
+                  <div class="project-meta">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">DAX</span>
+                    <span class="tag">Power Query</span>
+                    <span class="tag">Modeling</span>
+                  </div>
+                  <p class="project-desc">
+                    Interactive dashboard to analyze retail sales performance across a retail chain,
+                    including revenue, units sold, margin, and regional, category, and time comparisons.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Identification of the top 3 regions with the highest year-over-year growth</li>
+                    <li>Seasonality analysis and top-performing products by category</li>
+                    <li>Star-schema data model with 5 fact and dimension tables</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Overview</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Regional analysis</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 3 – Time trends</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://app.powerbi.com/view?r=TU_CODIGO_AQUI" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary">
+                      View Interactive Dashboard
+                    </a>
+                    <a href="#" class="btn btn-outline">Download .pbix</a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Publish to Web:</strong> This dashboard was published using the Power BI Service
+                    “Publish to Web” feature, allowing anyone to open and interact with it without a license.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="powerbi-project-2" role="tabpanel" aria-labelledby="powerbi-tab-2">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>HR Dashboard – Turnover and Employee Climate</h3>
+                  <div class="project-meta">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">DAX</span>
+                    <span class="tag">Storytelling</span>
+                  </div>
+                  <p class="project-desc">
+                    Report designed for HR leadership to monitor turnover, absenteeism, and employee climate survey results.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Monthly and annual turnover rate calculation using DAX</li>
+                    <li>Segmentation by department, tenure, and exit reason</li>
+                    <li>Design focused on actionable insights for managers</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Main KPIs</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Turnover analysis</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://app.powerbi.com/view?r=TU_CODIGO_AQUI" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary">
+                      View Interactive Dashboard
+                    </a>
+                    <a href="#" class="btn btn-outline">Download .pbix</a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Publish to Web:</strong> Dashboard published with Publish to Web (Power BI Service),
+                    enabling public and interactive access without a license.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="powerbi-project-3" role="tabpanel" aria-labelledby="powerbi-tab-3">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>Digital Marketing Campaign Analysis</h3>
+                  <div class="project-meta">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Power Query</span>
+                    <span class="tag">DAX</span>
+                  </div>
+                  <p class="project-desc">
+                    Integration of Google Ads, Meta Ads, and CRM data to evaluate campaign performance,
+                    CAC, ROAS, and conversions.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Data unification using Power Query</li>
+                    <li>ROAS and CAC calculation by channel and campaign</li>
+                    <li>Visualizations designed to support budget optimization</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Campaign overview</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Conversion funnel</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="https://app.powerbi.com/view?r=TU_CODIGO_AQUI" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary">
+                      View Interactive Dashboard
+                    </a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Publish to Web:</strong> Published with Publish to Web. Employers can explore the dashboard interactively.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-category" id="excel-projects">
+          <h3 class="category-title">Excel Projects</h3>
+          <div class="projects-tabs" data-group="excel">
+            <div class="tabs-header" role="tablist" aria-label="Excel projects">
+              <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="excel-project-1" id="excel-tab-1" data-tab="excel-project-1">
+                Project 1
+              </button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="excel-project-2" id="excel-tab-2" data-tab="excel-project-2">
+                Project 2
+              </button>
+            </div>
+
+            <div class="tab-panel active" id="excel-project-1" role="tabpanel" aria-labelledby="excel-tab-1">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>Monthly Financial Control</h3>
+                  <div class="project-meta">
+                    <span class="tag">Excel</span>
+                    <span class="tag">Pivot Tables</span>
+                    <span class="tag">Dashboard</span>
+                  </div>
+                  <p class="project-desc">
+                    Monthly financial tracking dashboard with indicators for revenue, expenses, variances,
+                    and category-level analysis.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Cash flow monitoring by month and category</li>
+                    <li>Pivot tables for historical comparisons</li>
+                    <li>Key indicators for budget decision-making</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Financial summary</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Category analysis</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="#" class="btn btn-primary">View Excel File</a>
+                    <a href="#" class="btn btn-outline">Download</a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Excel:</strong> Template designed for operational and financial tracking,
+                    enabling quick analysis and data-driven decisions.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="excel-project-2" role="tabpanel" aria-labelledby="excel-tab-2">
+              <article class="project-card">
+                <div class="project-header">
+                  <h3>Operations and KPI Report</h3>
+                  <div class="project-meta">
+                    <span class="tag">Excel</span>
+                    <span class="tag">Formulas</span>
+                    <span class="tag">Visualization</span>
+                  </div>
+                  <p class="project-desc">
+                    Operational dashboard for reviewing productivity, time, compliance, and performance indicators by area.
+                  </p>
+                  <ul class="project-insights">
+                    <li>Tracking KPIs by shift and team</li>
+                    <li>Automated calculations using advanced formulas</li>
+                    <li>Useful visual reporting for leadership meetings</li>
+                  </ul>
+                </div>
+
+                <div class="project-body">
+                  <div class="screenshots">
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 1 – Main KPI</span>
+                    </div>
+                    <div class="screenshot" onclick="openLightbox(this)">
+                      <span>Snapshot 2 – Team performance</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions">
+                    <a href="#" class="btn btn-primary">View Excel File</a>
+                    <a href="#" class="btn btn-outline">Download</a>
+                  </div>
+
+                  <p class="publish-note">
+                    <strong>Excel:</strong> Operational presentation designed for fast strategic decisions using relevant indicators and time comparisons.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" >
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">Academic development and relevant courses</p>
+      <div class="timeline">
+        <a class="timeline-item timeline-item-link" href="https://www.usfq.edu.ec/es/carreras-de-pregrado/ingenieria-industrial" target="_blank" rel="noopener noreferrer">
+          <h3>BSc. Industrial Engineering</h3>
+          <p class="org">
+            Universidad San Francisco de Quito
+          </p>
+          <p class="date">2022 – 2027</p>
+        </a>
+        <div class="timeline-item">
+          <h3>Courses & Certifications</h3>
+          <details class="course-dropdown">
+            <summary>Python & Data</summary>
+            <ul class="course-list">
+              <li>Power BI Fundamentals</li>
+              <li>Excel for Data Analysis</li>
+              <li>SQL for Business Intelligence</li>
+              <li>Python for Analytics</li>
+              <li>Data Visualization and Dashboard Design</li>
+            </ul>
+          </details>
+           <details class="course-dropdown">
+            <summary>Power BI</summary>
+            <ul class="course-list">
+              <li>Power BI Fundamentals</li>
+              <li>Excel for Data Analysis</li>
+              <li>SQL for Business Intelligence</li>
+              <li>Python for Analytics</li>
+              <li>Data Visualization and Dashboard Design</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">I’m always open to a conversation. Let’s connect.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">✉️</div>
+          <h4>Email</h4>
+          <a href="mailto:sescobarherrera@outlook.com">outlook.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">💼</div>
+          <h4>LinkedIn</h4>
+          <a href="https://linkedin.com/in/sescobarherrera" target="_blank">linkedin.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <h4>Location</h4>
+          <a href="https://maps.google.com/?q=Quito,+Ecuador" target="_blank">Quito, Ecuador</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <p><strong>Professional Portfolio · 2026 ©</strong></p>
+      <p style="margin-top: 6px; font-size: 0.85rem;">
+        <strong>Developed by Enrique Escobar</strong>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img src="" alt="Enlarged screenshot" id="lightboxImg" />
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Reveal sections and track the section currently in view.
+    const sections = document.querySelectorAll('main section, body > section');
+    const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    sections.forEach((section) => {
+      section.classList.add('reveal-on-scroll');
+      revealObserver.observe(section);
+    });
+
+    const activeSectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        sectionLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach((section) => activeSectionObserver.observe(section));
+
+    // Add a subtle mouse-follow tilt to project and education cards.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.project-card, .timeline-item').forEach((card) => {
+        card.addEventListener('mousemove', (event) => {
+          const bounds = card.getBoundingClientRect();
+          const x = (event.clientX - bounds.left) / bounds.width;
+          const y = (event.clientY - bounds.top) / bounds.height;
+          const rotateY = (x - 0.5) * 6;
+          const rotateX = (0.5 - y) * 6;
+
+          card.style.setProperty('--rotate-x', `${rotateX.toFixed(2)}deg`);
+          card.style.setProperty('--rotate-y', `${rotateY.toFixed(2)}deg`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.setProperty('--rotate-x', '0deg');
+          card.style.setProperty('--rotate-y', '0deg');
+        });
+      });
+    }
+
+    // Project tab switching by group
+    document.querySelectorAll('.projects-tabs').forEach((tabSet) => {
+      const tabButtons = tabSet.querySelectorAll('.tab-button');
+      const tabPanels = tabSet.querySelectorAll('.tab-panel');
+
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const target = button.dataset.tab;
+
+          tabButtons.forEach((btn) => {
+            const isActive = btn === button;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-selected', String(isActive));
+            btn.tabIndex = isActive ? 0 : -1;
+          });
+
+          tabPanels.forEach((panel) => {
+            const isActive = panel.id === target;
+            panel.classList.toggle('active', isActive);
+            panel.hidden = !isActive;
+          });
+        });
+      });
+
+      tabPanels.forEach((panel) => {
+        panel.hidden = !panel.classList.contains('active');
+      });
+    });
+
+    // Lightbox for screenshots
+    function openLightbox(element) {
+      const img = element.querySelector('img');
+      if (!img) return; // If no real image exists yet, do nothing
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || 'Dashboard screenshot';
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // Close lightbox with Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
