@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.1, 21 November 2016) written by
+% LianTze Lim (liantze@gmail.com), based on the 
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you want to use \orcid or the
+%% academicons icons, add "academicons"
+%% to the \documentclass options. 
+%% Then compile with XeLaTeX or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+\documentclass[10pt,a4paper]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages. 
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% When using the "academicons" option,
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you may need to install
+%% Academicons.ttf in your operating system's font %% folder.
+
+
+% Change the page layout if you need to
+\geometry{left=0.8cm,right=6.5cm,marginparwidth=5cm,marginparsep=0.7cm,top=0.5cm,bottom=1cm}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage[hidelinks]{hyperref}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage[spanish]{babel}
+\usepackage{datetime2}
+\usepackage{graphicx}
+\usepackage{float}
+
+% If using xelatex or lualatex:
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{000000}
+\definecolor{LightGrey}{HTML}{000000}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{ENRIQUE ESCOBAR }
+  \tagline{Estudiante de Ingeniería Industrial | Optimización de Procesos, Análisis de Datos y Mejora Continua}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+
+\begin{tabular} {p{17cm} p{5cm}}
+
+\textit{{\LARGE }}\\& \vspace{-8mm}\multirow{3}{*}{
+\begin{flushright}
+\href{https://www.linkedin.com/in/sescobarherrera}{\includegraphics[width=1.8cm]{images.png}}
+\end{flushright}}
+
+\\ 
+\vspace{-10mm} \textbf{\huge Enrique Sebastián Escobar} & \\
+\vspace{-7mm} sescobarherrera@outlook.com &\\
+\vspace{-7mm} Septiembre, 2026\\
+%\vspace{-7mm} \textbf{Graduate program:} Nuclear Engineering and Radiological Sciences M.S.E. &\\
+\end{tabular} 
+
+%   \github{} % I'm just making this up though.
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+
+
+%% Make the header extend all the way to the right, if you want. Extend the right margin by 8cm (=6.8cm marginparwidth + 1.2cm marginparsep)
+\begin{adjustwidth}{}{-8cm}
+
+\end{adjustwidth}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\vspace{-7mm}
+
+\cvsection[page1sidebar]{Experiencia Laboral}
+\vspace{-2mm}
+
+\cvevent{}{Business and Ops Fellow}{Junio 2025 -- Agosto 2025}{NEST.Lab - USFQ}
+\textbf{Habilidades Adquiridas y Logros:}
+\vspace{-1mm}
+\begin{justify}
+\begin{itemize}
+
+    \item \textbf{Gestión de Procesos y Documentación:} Coordinación de procesos administrativos esenciales, incluyendo el registro, control y carga de facturas, la organización de documentación interna y la actualización de bases de datos.
+    \item \textbf{Logística de Eventos y Programas:} Planificación y ejecución de la logística de eventos del ecosistema de innovación y del programa Fellowship; gestionando la convocatoria, recursos materiales y el flujo eficiente de información entre áreas y participantes.
+    \item \textbf{Generación de Reportes y KPIs:} Recopilación, consolidación y analisis de información clave para la toma de decisiones directivas, diseñando reportes operativos y dashboards en Power BI para el monitoreo de convenios y KPIs de eventos.
+    \item \textbf{Producción y Difusión de Contenido:} Administración de la logística, planificación de episodios y publicación de contenido multimedia (Podcast de innovación) en plataformas digitales para fortalecer el alcance de la comunidad estudiantil.
+    
+\end{itemize}
+\end{justify}
+
+\cvevent{}{Analísta Técnico}{Marzo 2025 -- Abril 2025}{Digital Strategy}
+
+\textbf{Habilidades Adquiridas:}
+\vspace{-1mm}
+\begin{justify}
+\begin{itemize}
+    \item \textbf{Manejo de CRM y Flujos de Trabajo:} Administración de soluciones CRM optimizando la gestión de relaciones y el seguimiento de interacciones mediante la configuración personalizada de flujos de trabajo.
+    \item \textbf{Automatización de Procesos:} Diseño e integración de flujos de trabajo automatizados multi-aplicación, reduciendo significativamente las tareas manuales y maximizando la productividad operativa.
+    \item \textbf{Visualización de Métricas:} Desarrollo de dashboards interactivos con métricas clave para el monitoreo en tiempo real y soporte en la toma de decisiones estratégicas.
+\end{itemize}
+\end{justify}
+
+\cvevent{}{Consultor de Análisis de Datos}{Noviembre 2023 -- Noviembre 2025}{Strategic Thrusts}
+
+\textbf{Habilidades Adquiridas:}
+\vspace{-1mm}
+\begin{justify}
+\begin{itemize}
+    \item \textbf{Optimización y Automatización (ETL):} Diseño y mantenimiento de flujos automatizados de datos para la gestión de logística y accesos biométricos, mejorando la disponibilidad de la información.
+    \item \textbf{Análisis de Indicadores de Gestión:} Definición y monitoreo de KPIs operativos y de tránsito en Power BI, permitiendo control en tiempo real para respuestas ágiles ante cuellos de botella.
+    \item \textbf{Modelado y Pronósticos:} Desarrollo de modelos basados en históricos para proyectar la demanda de suministros para optimizar el capital de trabajo y mitigar quiebres de stock.
+\end{itemize}
+\end{justify}
+
+\vspace{-2mm}
+\cvsection{Habilidades fuertes}
+\vspace{-3mm}
+\begin{justify}
+\begin{itemize}
+     \item \textbf{Gestión y Modelado de Procesos:} Levantamiento, mapeo (diagramas de flujo) y documentación de procesos de punta a punta. Enfoque en la identificación de cuellos de botella y diseño de propuestas de mejora continua.
+     \item \textbf{Automatización y Herramientas Digitales:} Experiencia práctica en automatización de flujos de trabajo (Zoho Automation, lógica aplicable a Power Automate) y gestión de plataformas CRM para el seguimiento de usuarios/clientes.
+     \item \textbf{Análisis de Datos y BI:} Dominio de SQL, Python (pandas) y Power BI (DAX/Power Query) para limpiar datos, diseñar dashboards intuitivos, estructurar diccionarios de variables y realizar seguimiento de KPIs operativos.
+\end{itemize}
+\end{justify}
+
+%% \vspace{3mm}
+%% \textbf{Teamwork Abilities:} \\
+%% \begin{itemize}
+    %% \item Effective communication skills, enabling collaboration across diverse teams and disciplines.
+   %% \item Proven leadership experience in guiding teams to complete complex projects and meet deadlines.
+   %% \item Skilled in conflict resolution and fostering a collaborative working environment to maximize team performance.
+   %% \item Experience in coordinating cross-functional teams for industrial engineering projects, balancing technical and operational goals.
+%% \end{itemize} 
+
+%\vspace{3mm}
+%\textbf{Problem-solving Abilities:} \\
+%\begin{itemize}
+    %\item Adept at identifying and analyzing complex problems, particularly in operations research and supply chain management, to devise efficient solutions.
+    %\item Skilled in applying Six Sigma and statistical process control techniques to improve production quality and reduce defects.
+    %\item Confident in using data-driven decision-making under pressure, with strong analytical reasoning capabilities.
+%\end{itemize}
+
+\end{justify}
+
+\end{document}
