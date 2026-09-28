@@ -320,6 +320,14 @@
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
+      transform: perspective(900px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out, box-shadow 0.25s ease;
+      will-change: transform;
+    }
+
+    .about-info:hover {
+      box-shadow: var(--shadow-soft);
     }
 
     .about-info::before {
@@ -328,6 +336,14 @@
       inset: 0 0 auto 0;
       height: 4px;
       background: linear-gradient(90deg, var(--accent), var(--secondary));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .about-info {
+        transform: none;
+        transition: none;
+        will-change: auto;
+      }
     }
 
     .about-info h3 {
@@ -1056,6 +1072,10 @@
             <span>Immediate</span>
           </div>
           <div class="info-item">
+            <span>Phone Number</span>
+            <span>+593 979179463</span>
+          </div>
+          <div class="info-item">
             <span>Modality</span>
             <span>Remote/Hybrid</span>
           </div>
@@ -1704,9 +1724,9 @@
 
     sections.forEach((section) => activeSectionObserver.observe(section));
 
-    // Add a subtle mouse-follow tilt to project and education cards.
+    // Add a subtle mouse-follow tilt to cards, including the quick info panel.
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.project-card, .timeline-item').forEach((card) => {
+      document.querySelectorAll('.project-card, .timeline-item, .about-info').forEach((card) => {
         card.addEventListener('mousemove', (event) => {
           const bounds = card.getBoundingClientRect();
           const x = (event.clientX - bounds.left) / bounds.width;
