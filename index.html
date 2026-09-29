@@ -1081,6 +1081,7 @@
     }
 
     .contact-card {
+      display: block;
       background: white;
       border: 1px solid rgba(230, 235, 241, 0.15);
       border-radius: var(--radius);
@@ -1094,23 +1095,22 @@
       transform: translateY(-3px);
     }
 
+    .contact-card:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
     .contact-card .icon {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 12px;
+      object-fit: contain;
     }
 
     .contact-card h4 {
       font-size: 1rem;
       margin-bottom: 6px;
-    }
-
-    .contact-card a {
-      color: #c7b8a6;
-      font-size: 0.95rem;
-    }
-
-    .contact-card a:hover {
-      text-decoration: underline;
     }
 
     /* ========== FOOTER ========== */
@@ -1919,21 +1919,18 @@
       <p class="section-subtitle">I’m always open to talk. Let’s connect!</p>
 
       <div class="contact-grid">
-        <div class="contact-card">
-          <div class="icon">✉️</div>
+        <a class="contact-card" href="mailto:sescobarherrera@outlook.com">
+          <img class="icon" src="https://www.google.com/s2/favicons?domain=outlook.live.com&amp;sz=64" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <h4>Email</h4>
-          <a href="mailto:sescobarherrera@outlook.com">outlook.com</a>
-        </div>
-        <div class="contact-card">
-          <div class="icon">💼</div>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/sescobarherrera" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="https://www.google.com/s2/favicons?domain=linkedin.com&amp;sz=64" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <h4>LinkedIn</h4>
-          <a href="https://linkedin.com/in/sescobarherrera" target="_blank">linkedin.com</a>
-        </div>
-        <div class="contact-card">
-          <div class="icon">📍</div>
-          <h4>Location</h4>
-          <a href="https://maps.google.com/?q=Quito,+Ecuador" target="_blank">Quito, Ecuador</a>
-        </div>
+        </a>
+        <a class="contact-card" href="https://maps.google.com/?q=Quito,+Ecuador" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="https://www.google.com/s2/favicons?domain=maps.google.com&amp;sz=64" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <h4>Quito, Ecuador</h4>
+        </a>
       </div>
     </div>
   </section>
