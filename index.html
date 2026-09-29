@@ -485,6 +485,54 @@
       will-change: transform;
     }
 
+    .experience-brand {
+      display: flex;
+      align-items: center;
+      height: 72px;
+      margin-bottom: 16px;
+    }
+
+    .experience-logo {
+      display: block;
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .experience-logo--usfq {
+      width: 165px;
+      height: 100px;
+      padding: 8px;
+      border-radius: 8px;
+      background: white;
+      align-items: center;
+    }
+
+    .experience-logo--digital-strategy {
+      width: 180px;
+      height: 56px;
+      padding: 8px;
+      border-radius: 4px;
+      background: white;
+      align-items: center;
+    }
+
+    .experience-logo--nest {
+      width: 180px;
+      height: 100px;
+      padding: 4px;
+      border-radius: 4px;
+      background: white;
+    }
+
+    .experience-logo--strategic {
+      width: 180px;
+      height: 100px;
+      padding: 8px;
+      border-radius: 8px;
+      background: white;
+    }
+
     .experience-card:hover {
       border-color: var(--accent);
       box-shadow: var(--shadow-soft);
@@ -1487,6 +1535,9 @@
       <div class="experience-grid">
 
         <article class="experience-card">
+          <div class="experience-brand">
+            <img class="experience-logo experience-logo--usfq" src="https://www.iberonex.com/wp-content/uploads/2023/09/universidad-san-franfisco-de-quito.png" alt="Universidad San Francisco de Quito logo" loading="lazy" decoding="async" />
+          </div>
           <h3>Teaching Assistant</h3>
           <p class="experience-organization">Universidad San Francisco de Quito</p>
           <p class="experience-date">Present</p>
@@ -1495,14 +1546,20 @@
 
         <!-- NEST.Lab -->
         <article class="experience-card">
+          <div class="experience-brand">
+            <img class="experience-logo experience-logo--nest" src="https://blogger.googleusercontent.com/img/a/AVvXsEi8hZHV3E3eENK66cY8Q8lEag2PIjlQHodyIvIpU36K8zWuUJ1_VHwjblyO3ZOD_qJakkVy5vP6FVigovt7jL5lcCyqSuKW4HK_pFQOqbmcjfSFFj9JZKNg9KlBA4QyIS_4auHjqIhOkEiqR0lnzdCDcwH8cWrLAWhaQkvUm4jLAwIUHh4MzfRjNKfk0kQ=w480-h288" alt="Universidad San Francisco de Quito logo" loading="lazy" decoding="async" />
+          </div>
           <h3>Business & Ops Fellow</h3>
           <p class="experience-organization">NEST.Lab | USFQ</p>
-          <p class="experience-date">Jun 2025 – Aug 2025</p>
+          <p class="experience-date" >Jun 2025 – Aug 2025</p>
           <p>Managed administrative processes, event logistics, and documentation. Built Power BI dashboards and operational reports to track KPIs, partnerships, and program performance for the innovation ecosystem.</p>
         </article>
 
         <!-- Digital Strategy -->
         <article class="experience-card">
+          <div class="experience-brand">
+            <img class="experience-logo experience-logo--digital-strategy" src="https://www.digitalstrategy.com.ec/digital-strategy-logo.png" alt="Digital Strategy logo" loading="lazy" decoding="async" />
+          </div>
           <h3>Technical Analyst</h3>
           <p class="experience-organization">Digital Strategy</p>
           <p class="experience-date">Mar 2025 – Apr 2025</p>
@@ -1511,6 +1568,9 @@
 
         <!-- Strategic Thrusts -->
         <article class="experience-card">
+          <div class="experience-brand">
+            <img class="experience-logo experience-logo--strategic" src="WhatsApp Image 2026-09-29 at 01.03.38.jpeg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          </div>
           <h3>Data Analysis Consultant</h3>
           <p class="experience-organization">Strategic Thrusts</p>
           <p class="experience-date">Nov 2023 – Nov 2025</p>
